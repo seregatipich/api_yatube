@@ -1,4 +1,3 @@
-from constants import permission_denied_message
 from rest_framework import viewsets
 from rest_framework.generics import get_object_or_404
 from rest_framework.views import PermissionDenied
@@ -6,6 +5,7 @@ from rest_framework.views import PermissionDenied
 from posts.models import Group, Post
 
 from .serializers import CommentSerializer, GroupSerializer, PostSerializer
+from constants import permission_denied_message
 
 
 class GroupViewSet(viewsets.ReadOnlyModelViewSet):
