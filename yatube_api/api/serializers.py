@@ -21,18 +21,9 @@ class GroupSerializer(serializers.ModelSerializer):
 
 
 class PostSerializer(serializers.ModelSerializer):
-    group = serializers.SlugRelatedField(
-        slug_field='title',
-        queryset=Group.objects.all(),
-        required=False
-    )
     author = serializers.SlugRelatedField(
         read_only=True,
         slug_field='username'
-    )
-    publication_date = serializers.DateTimeField(
-        source='pub_date',
-        read_only=True
     )
 
     class Meta:
