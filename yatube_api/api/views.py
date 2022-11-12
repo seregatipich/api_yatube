@@ -1,10 +1,8 @@
 from api.permissions import IsAuthorOrReadOnly
 from api.serializers import CommentSerializer, GroupSerializer, PostSerializer
 from posts.models import Group, Post
-from rest_framework import permissions, status, viewsets
-from rest_framework.exceptions import PermissionDenied
+from rest_framework import permissions, viewsets
 from rest_framework.generics import get_object_or_404
-from rest_framework.response import Response
 
 
 class GroupViewSet(viewsets.ReadOnlyModelViewSet):
